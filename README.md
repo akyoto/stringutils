@@ -1,4 +1,4 @@
-# unsafe
+# stringutils
 
 [![Godoc][godoc-image]][godoc-url]
 [![Report][report-image]][report-url]
@@ -20,13 +20,13 @@ Please take a look at the [style guidelines](https://github.com/akyoto/quality/b
 
 Want to see [your own name here?](https://www.patreon.com/eduardurbach)
 
-[godoc-image]: https://godoc.org/github.com/akyoto/unsafe?status.svg
-[godoc-url]: https://godoc.org/github.com/akyoto/unsafe
-[report-image]: https://goreportcard.com/badge/github.com/akyoto/unsafe
-[report-url]: https://goreportcard.com/report/github.com/akyoto/unsafe
-[tests-image]: https://cloud.drone.io/api/badges/akyoto/unsafe/status.svg
-[tests-url]: https://cloud.drone.io/akyoto/unsafe
-[coverage-image]: https://codecov.io/gh/akyoto/unsafe/graph/badge.svg
-[coverage-url]: https://codecov.io/gh/akyoto/unsafe
+[godoc-image]: https://godoc.org/github.com/akyoto/stringutils?status.svg
+[godoc-url]: https://godoc.org/github.com/akyoto/stringutils
+[report-image]: https://goreportcard.com/badge/github.com/akyoto/stringutils
+[report-url]: https://goreportcard.com/report/github.com/akyoto/stringutils
+[tests-image]: https://cloud.drone.io/api/badges/akyoto/stringutils/status.svg
+[tests-url]: https://cloud.drone.io/akyoto/stringutils
+[coverage-image]: https://codecov.io/gh/akyoto/stringutils/graph/badge.svg
+[coverage-url]: https://codecov.io/gh/akyoto/stringutils
 [patreon-image]: https://img.shields.io/badge/patreon-donate-green.svg
 [patreon-url]: https://www.patreon.com/eduardurbach
