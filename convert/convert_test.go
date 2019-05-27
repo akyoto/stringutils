@@ -5,31 +5,32 @@ import (
 	"testing"
 
 	"github.com/akyoto/stringutils/convert"
-	"github.com/stretchr/testify/assert"
+	qt "github.com/frankban/quicktest"
 )
 
 func TestDecToInt(t *testing.T) {
-	assert.Equal(t, 0, convert.DecToInt([]byte("")))
-	assert.Equal(t, 0, convert.DecToInt([]byte("0")))
-	assert.Equal(t, 1, convert.DecToInt([]byte("1")))
-	assert.Equal(t, 10, convert.DecToInt([]byte("10")))
-	assert.Equal(t, 100, convert.DecToInt([]byte("100")))
-	assert.Equal(t, 123456789, convert.DecToInt([]byte("123456789")))
-	assert.Equal(t, 0, convert.DecToInt([]byte("ZZZ")))
+	c := qt.New(t)
+	c.Assert(0, qt.Equals, convert.DecToInt([]byte("")))
+	c.Assert(0, qt.Equals, convert.DecToInt([]byte("0")))
+	c.Assert(1, qt.Equals, convert.DecToInt([]byte("1")))
+	c.Assert(10, qt.Equals, convert.DecToInt([]byte("10")))
+	c.Assert(100, qt.Equals, convert.DecToInt([]byte("100")))
+	c.Assert(123456789, qt.Equals, convert.DecToInt([]byte("123456789")))
+	c.Assert(0, qt.Equals, convert.DecToInt([]byte("ZZZ")))
 }
 
 func TestHexToInt(t *testing.T) {
-	assert.Equal(t, 0x0, convert.HexToInt([]byte("")))
-	assert.Equal(t, 0x0, convert.HexToInt([]byte("0")))
-	assert.Equal(t, 0x1, convert.HexToInt([]byte("1")))
-	assert.Equal(t, 0xA, convert.HexToInt([]byte("A")))
-	assert.Equal(t, 0x10, convert.HexToInt([]byte("10")))
-	assert.Equal(t, 0xAFFE, convert.HexToInt([]byte("AFFE")))
-	assert.Equal(t, 0xAFFE, convert.HexToInt([]byte("Affe")))
-	assert.Equal(t, 0xBADFACE, convert.HexToInt([]byte("BADFACE")))
-	assert.Equal(t, 0xBADFACE, convert.HexToInt([]byte("BadFace")))
-	assert.Equal(t, 0, convert.HexToInt([]byte("ZZZ")))
-
+	c := qt.New(t)
+	c.Assert(0x0, qt.Equals, convert.HexToInt([]byte("")))
+	c.Assert(0x0, qt.Equals, convert.HexToInt([]byte("0")))
+	c.Assert(0x1, qt.Equals, convert.HexToInt([]byte("1")))
+	c.Assert(0xA, qt.Equals, convert.HexToInt([]byte("A")))
+	c.Assert(0x10, qt.Equals, convert.HexToInt([]byte("10")))
+	c.Assert(0xAFFE, qt.Equals, convert.HexToInt([]byte("AFFE")))
+	c.Assert(0xAFFE, qt.Equals, convert.HexToInt([]byte("Affe")))
+	c.Assert(0xBADFACE, qt.Equals, convert.HexToInt([]byte("BADFACE")))
+	c.Assert(0xBADFACE, qt.Equals, convert.HexToInt([]byte("BadFace")))
+	c.Assert(0, qt.Equals, convert.HexToInt([]byte("ZZZ")))
 }
 
 func BenchmarkDecToInt(b *testing.B) {

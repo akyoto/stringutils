@@ -4,19 +4,19 @@ import (
 	"testing"
 
 	"github.com/akyoto/stringutils/unsafe"
-	"github.com/stretchr/testify/assert"
+	qt "github.com/frankban/quicktest"
 )
 
 func TestBytesToString(t *testing.T) {
 	out := "hello"
 	in := []byte(out)
-
-	assert.Equal(t, out, unsafe.BytesToString(in))
+	c := qt.New(t)
+	c.Assert(out, qt.DeepEquals, unsafe.BytesToString(in))
 }
 
 func TestStringToBytes(t *testing.T) {
 	in := "hello"
 	out := []byte(in)
-
-	assert.Equal(t, out, unsafe.StringToBytes(in))
+	c := qt.New(t)
+	c.Assert(out, qt.DeepEquals, unsafe.StringToBytes(in))
 }
