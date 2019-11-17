@@ -26,6 +26,8 @@ func TestHexToInt(t *testing.T) {
 	assert.Equal(t, int64(0x10), convert.HexToInt([]byte("10")))
 	assert.Equal(t, int64(0xAFFE), convert.HexToInt([]byte("AFFE")))
 	assert.Equal(t, int64(0xAFFE), convert.HexToInt([]byte("Affe")))
+	assert.Equal(t, int64(0xCAFE), convert.HexToInt([]byte("CAFE")))
+	assert.Equal(t, int64(0xCAFE), convert.HexToInt([]byte("Cafe")))
 	assert.Equal(t, int64(0xBADFACE), convert.HexToInt([]byte("BADFACE")))
 	assert.Equal(t, int64(0xBADFACE), convert.HexToInt([]byte("BadFace")))
 	assert.Equal(t, int64(0), convert.HexToInt([]byte("ZZZ")))
@@ -50,7 +52,7 @@ func BenchmarkStrconvDecToInt(b *testing.B) {
 }
 
 func BenchmarkHexToInt(b *testing.B) {
-	example := []byte("AFFE")
+	example := []byte("CAFE")
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
@@ -59,7 +61,7 @@ func BenchmarkHexToInt(b *testing.B) {
 }
 
 func BenchmarkStrconvHexToInt(b *testing.B) {
-	example := "AFFE"
+	example := "CAFE"
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
